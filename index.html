@@ -1,47 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MapleStoryDaily</title>
-    <style>
-      .top-box {
-        display: flex;
-      }
-  
-      .add-btn {
-        margin-right: 12px;
-      }
-  
-      .top-box input {
-        margin-right: 20px;
-      }
-  
-      table {
-        margin-top: 20px;
-      }
-  
-      tr {
-        background-color: white;
-      }
-  
-      table {
-        width: 500px;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="app">
-      <div class="top-box">
-        <input type="text" id="newUser">
-        <button @click="addNewUser" class="add-btn">添加</button>
-        <button>重置</button>
-      </div>
-  
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MapleStoryDaily</title>
+  <style>
+    body {
+      font-family: PingFangSC, PingFang SC, Microsoft YaHei, 'simsun', serif;
+    }
+
+    .top-box {
+      display: flex;
+    }
+
+    .add-btn {
+      margin-right: 12px;
+    }
+
+    .top-box input {
+      margin-right: 20px;
+    }
+
+    tr {
+      background-color: white;
+    }
+
+    table {
+      width: 500px;
+    }
+
+    .table-image {
+      display: flex;
+      margin-top: 20px;
+    }
+
+    .table-image img {
+      width: 579px;
+      height: 374px;
+      margin-left: 20px;
+    }
+
+    .text-title {
+      margin: 20px 0 10px;
+    }
+
+    .mount-three {
+      display: grid;
+      grid-template-columns: 100px 100px 100px;
+      grid-template-rows: 50px 50px 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <div class="top-box">
+      <input type="text" id="newUser">
+      <button @click="addNewUser" class="add-btn">添加</button>
+      <button>重置</button>
+    </div>
+
+    <div class="table-image">
       <table cellspacing="1px" bgcolor="black" id="table">
         <thead>
           <tr>
+            <td>序号</td>
             <td>角色</td>
             <td>日常</td>
             <td>周长</td>
@@ -52,102 +77,288 @@
         <tbody>
         </tbody>
       </table>
+      <img src="./src/assets/6.jpeg" alt="">
     </div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
-  <script>
+    <div class="text-title">3岛:</div>
+    <div class="mount-three">
+      <div>
+        <label>1:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>2:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>3:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>4:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>5:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>6:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>7:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>8:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+      <div>
+        <label>9:</label>
+        <select>
+          <option value="1">钢琴</option>
+          <option value="2">柜子</option>
+          <option value="3">沙发</option>
+          <option value="4">喇叭</option>
+          <option value="5">吹喇叭</option>
+          <option value="6">盒子</option>
+          <option value="7">古钟</option>
+          <option value="8">镜子</option>
+          <option value="9">床</option>
+        </select>
+      </div>
+    </div>
 
-    var arr = [{
+  </div>
+  <!-- <script type="module" src="/src/main.ts"></script> -->
+</body>
+<script>
+
+  var arr = [
+    {
+      name: 'HeroMapStory',
+      daily: true,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'KghtMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'BuccMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'BishMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
       name: 'ThifMapStory',
       daily: false,
       swim: false,
       week: false
     },
     {
-      name: 'AngleMapStory',
+      name: 'AnglMapStory',
       daily: false,
       swim: false,
       week: false
     },
     {
-      name: 'HeroMapStory',
+      name: 'FistMapStory',
       daily: false,
       swim: false,
       week: false
+    },
+    {
+      name: 'SecdMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'ThidMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'FourMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'FithMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'SixsMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'SevnMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'EigtMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'LynnMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'SomeMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+  ]
+  const btn = document.querySelector(".add-btn");
+  btn.addEventListener('click', function () {
+    // resetTable()
+  })
+
+  var tbody = document.querySelector('tbody');
+  function refreshTable() {
+    var tempArr = JSON.parse(localStorage.getItem('userInfo'))
+    if (tempArr== null ||tempArr.length==0) {
+      tempArr = arr
     }
-    ]
-    const btn = document.querySelector(".add-btn");
-    btn.addEventListener('click', function () {
-      addNewUser()
-      // resetTable()
-    })
-    function addNewUser() {
-      const newUser = document.querySelector("#newUser");
-      var check = arr.filter(item => item.name == newUser.value)
-      if (newUser.value && check.length == 0) {
-        arr.push({
-          name: newUser.value,
-          daily: 1,
-          swim: false,
-          week: false
-        })
-        addNew()
-        deleteRole()
-      }
-    }
-  
-    var tbody = document.querySelector('tbody');
-  
-    function addNew() {
+    for (var i = 0; i < tempArr.length; i++) {//    根据数据创建行的
       var tr = document.createElement('tr')
       tbody.appendChild(tr);
-      var newLength = arr.length - 1
-      for (var k in arr[newLength]) {    //创建列的
+      var sort = document.createElement('td');
+      sort.innerHTML = i + 1;
+      tr.appendChild(sort);
+      for (var k in tempArr[i]) {    //创建列的
         var td = document.createElement('td');
         if (k != 'name') {
-          td.innerHTML = '<input type="checkbox">'
+          td.innerHTML = '<input type="checkbox" ' + `${tempArr[i][k] ? 'checked' : ''}` + 'name="iii">'
         } else {
-          td.innerHTML = arr[newLength][k];
+          td.innerHTML = tempArr[i][k];
         }
         tr.appendChild(td);
+        td.addEventListener('click', function(){
+          // console.log(this.getAttribute('name'), 'something ');
+        })
       }
       // 每一行添加删除操作列
       var td = document.createElement('td');
       td.innerHTML = '<a href="javascript:;">删除</a>';
       tr.appendChild(td);
     }
-  
-    function refreshTable() {
-      // tbody.remove()
-      for (var i = 0; i < arr.length; i++) {//    根据数据创建行的
-        var tr = document.createElement('tr')
-        tbody.appendChild(tr);
-        for (var k in arr[i]) {    //创建列的
-          var td = document.createElement('td');
-          if (k != 'name') {
-            td.innerHTML = '<input type="checkbox">'
-          } else {
-            td.innerHTML = arr[i][k];
-          }
-          tr.appendChild(td);
-        }
-        // 每一行添加删除操作列
-        var td = document.createElement('td');
-        td.innerHTML = '<a href="javascript:;">删除</a>';
-        tr.appendChild(td);
-      }
+  }
+
+  function deleteRole() {
+    var a = document.querySelectorAll('a');
+    for (var i = 0; i < a.length; i++) {          //所有a循环添加点击事件
+      a[i].addEventListener('click', function () {
+        tbody.removeChild(this.parentNode.parentNode);       //a的父亲是td    td的父亲才是tr  干掉他爷爷
+      })
     }
-  
-    function deleteRole() {
-      var a = document.querySelectorAll('a');
-      for (var i = 0; i < a.length; i++) {          //所有a循环添加点击事件
-        a[i].addEventListener('click', function () {
-          tbody.removeChild(this.parentNode.parentNode);       //a的父亲是td    td的父亲才是tr  干掉他爷爷
-        })
-      }
-    }
-    refreshTable()
-    deleteRole()
-  
-  </script>
+  }
+  refreshTable()
+  deleteRole()
+
+</script>
+
 </html>
