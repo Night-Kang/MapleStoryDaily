@@ -4,10 +4,150 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + Vue + TS</title>
+    <title>MapleStoryDaily</title>
+    <style>
+      .top-box {
+        display: flex;
+      }
+  
+      .add-btn {
+        margin-right: 12px;
+      }
+  
+      .top-box input {
+        margin-right: 20px;
+      }
+  
+      table {
+        margin-top: 20px;
+      }
+  
+      tr {
+        background-color: white;
+      }
+  
+      table {
+        width: 500px;
+      }
+    </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="top-box">
+        <input type="text" id="newUser">
+        <button @click="addNewUser" class="add-btn">添加</button>
+        <button>重置</button>
+      </div>
+  
+      <table cellspacing="1px" bgcolor="black" id="table">
+        <thead>
+          <tr>
+            <td>角色</td>
+            <td>日常</td>
+            <td>周长</td>
+            <td>游泳</td>
+            <td>操作</td>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
     <script type="module" src="/src/main.ts"></script>
   </body>
+  <script>
+
+    var arr = [{
+      name: 'ThifMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'AngleMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    },
+    {
+      name: 'HeroMapStory',
+      daily: false,
+      swim: false,
+      week: false
+    }
+    ]
+    const btn = document.querySelector(".add-btn");
+    btn.addEventListener('click', function () {
+      addNewUser()
+      // resetTable()
+    })
+    function addNewUser() {
+      const newUser = document.querySelector("#newUser");
+      var check = arr.filter(item => item.name == newUser.value)
+      if (newUser.value && check.length == 0) {
+        arr.push({
+          name: newUser.value,
+          daily: 1,
+          swim: false,
+          week: false
+        })
+        addNew()
+        deleteRole()
+      }
+    }
+  
+    var tbody = document.querySelector('tbody');
+  
+    function addNew() {
+      var tr = document.createElement('tr')
+      tbody.appendChild(tr);
+      var newLength = arr.length - 1
+      for (var k in arr[newLength]) {    //创建列的
+        var td = document.createElement('td');
+        if (k != 'name') {
+          td.innerHTML = '<input type="checkbox">'
+        } else {
+          td.innerHTML = arr[newLength][k];
+        }
+        tr.appendChild(td);
+      }
+      // 每一行添加删除操作列
+      var td = document.createElement('td');
+      td.innerHTML = '<a href="javascript:;">删除</a>';
+      tr.appendChild(td);
+    }
+  
+    function refreshTable() {
+      // tbody.remove()
+      for (var i = 0; i < arr.length; i++) {//    根据数据创建行的
+        var tr = document.createElement('tr')
+        tbody.appendChild(tr);
+        for (var k in arr[i]) {    //创建列的
+          var td = document.createElement('td');
+          if (k != 'name') {
+            td.innerHTML = '<input type="checkbox">'
+          } else {
+            td.innerHTML = arr[i][k];
+          }
+          tr.appendChild(td);
+        }
+        // 每一行添加删除操作列
+        var td = document.createElement('td');
+        td.innerHTML = '<a href="javascript:;">删除</a>';
+        tr.appendChild(td);
+      }
+    }
+  
+    function deleteRole() {
+      var a = document.querySelectorAll('a');
+      for (var i = 0; i < a.length; i++) {          //所有a循环添加点击事件
+        a[i].addEventListener('click', function () {
+          tbody.removeChild(this.parentNode.parentNode);       //a的父亲是td    td的父亲才是tr  干掉他爷爷
+        })
+      }
+    }
+    refreshTable()
+    deleteRole()
+  
+  </script>
 </html>
